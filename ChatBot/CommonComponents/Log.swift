@@ -61,7 +61,7 @@ public final class log {
         
         let splitFileID = fileID.components(separatedBy: "/").last?.components(separatedBy: ".").first ?? fileID
         
-        let log = date + " DEBUG \(event.rawValue) " + splitFileID + "." + function + ":\(line)" + " - " + String(describing: items)
+        let log = date + " ERROR \(event.rawValue) " + splitFileID + "." + function + ":\(line)" + " - " + String(describing: items)
         
         let logList = """
         \(log)
