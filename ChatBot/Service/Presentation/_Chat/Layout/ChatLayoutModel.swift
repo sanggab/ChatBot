@@ -15,7 +15,7 @@ protocol ChatLayoutModelProtocol: AnyObject {
     func didTapSendMessage()
 }
 
-class ChatLayoutModel {
+class ChatLayoutModel: NSObject {
     
     let layout = ChatMainLayout(frame: .zero)
     
@@ -24,12 +24,20 @@ class ChatLayoutModel {
     func loadView() {
         
         bind()
+        setDelegate()
+        addKeyboardNotification()
     }
     
     func bind() {
         
+        layoutBind()
         headerViewBind()
         inputBarViewBind()
+    }
+    
+    func layoutBind() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapLayout))
+        layout.addGestureRecognizer(tap)
     }
     
     func headerViewBind() {
@@ -41,6 +49,10 @@ class ChatLayoutModel {
     func inputBarViewBind() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapSendMessage))
         layout.inputBarView.sendImageView.addGestureRecognizer(tap)
+    }
+    
+    func setDelegate() {
+        layout.inputBarView.textView.delegate = self
     }
 
     deinit {

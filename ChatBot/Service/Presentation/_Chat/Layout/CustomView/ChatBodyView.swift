@@ -25,12 +25,13 @@ class ChatBodyView: UIView {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = false
         
-        tableView.register(ChatDefaultCell.self, forCellReuseIdentifier: ChatDefaultCell.identifier)
+        tableView.register(ChatUserCell.self, forCellReuseIdentifier: ChatUserCell.identifier)
+        tableView.register(ChatAssistantCell.self, forCellReuseIdentifier: ChatAssistantCell.identifier)
             
         return tableView
     }()
     
-    var dataSource: UITableViewDiffableDataSource<String, String>!
+    var dataSource: UITableViewDiffableDataSource<String, Chatting>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

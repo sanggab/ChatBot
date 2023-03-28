@@ -44,4 +44,9 @@ extension UIImage {
     static var btnSend: UIImage? {
         UIImage(named: "btn_send")
     }
+    
+    static var chatGPT: UIImage? {
+        UIImage(named: "chatGPT")
+    }
+    
 }

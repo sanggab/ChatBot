@@ -16,4 +16,8 @@ extension ChatLayoutModel {
     @objc func didTapSendMessage(_ sender: UIGestureRecognizer) {
         self.delegate?.didTapSendMessage()
     }
+    
+    @objc func didTapLayout(_ sender: UIGestureRecognizer) {
+        self.layout.endEditing(true)
+    }
 }

@@ -46,7 +46,7 @@
 		EF3C6DAD29D17690008A5B23 /* ChatRepsitories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7629D17690008A5B23 /* ChatRepsitories.swift */; };
 		EF3C6DAE29D17690008A5B23 /* MainRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7729D17690008A5B23 /* MainRepositories.swift */; };
 		EF3C6DAF29D17690008A5B23 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7B29D17690008A5B23 /* ChatViewModel.swift */; };
-		EF3C6DB129D17690008A5B23 /* ChatDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7F29D17690008A5B23 /* ChatDefaultCell.swift */; };
+		EF3C6DB129D17690008A5B23 /* ChatUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7F29D17690008A5B23 /* ChatUserCell.swift */; };
 		EF3C6DB229D17690008A5B23 /* ChatInputBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D8129D17690008A5B23 /* ChatInputBarView.swift */; };
 		EF3C6DB329D17690008A5B23 /* ChatBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D8229D17690008A5B23 /* ChatBodyView.swift */; };
 		EF3C6DB529D17690008A5B23 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D8429D17690008A5B23 /* ChatHeaderView.swift */; };
@@ -62,6 +62,13 @@
 		EF3C6DC029D17690008A5B23 /* MainBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D9429D17690008A5B23 /* MainBodyView.swift */; };
 		EF3C6DC129D17690008A5B23 /* MainLayoutModel + Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D9529D17690008A5B23 /* MainLayoutModel + Gesture.swift */; };
 		EF3C6DC229D17690008A5B23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D9729D17690008A5B23 /* MainViewController.swift */; };
+		EF5AA1DF29D2ABE50039B7A9 /* ChatLayoutModel + textView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5AA1DE29D2ABE50039B7A9 /* ChatLayoutModel + textView.swift */; };
+		EF5AA1E129D2AC2E0039B7A9 /* ChatLayoutModel + Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5AA1E029D2AC2E0039B7A9 /* ChatLayoutModel + Keyboard.swift */; };
+		EF6F4B9E29D179E200D77A9B /* ChatAssistantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F4B9D29D179E200D77A9B /* ChatAssistantCell.swift */; };
+		EF6F4BA029D17CF000D77A9B /* ChatProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F4B9F29D17CF000D77A9B /* ChatProfileView.swift */; };
+		EF6F4BA229D18C6A00D77A9B /* ChatViewController + tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */; };
+		EF6F4BA529D264E200D77A9B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF6F4BA429D264E200D77A9B /* SnapKit */; };
+		EF6F4BAA29D2659800D77A9B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EF6F4BA929D2659800D77A9B /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +109,7 @@
 		EF3C6D7629D17690008A5B23 /* ChatRepsitories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRepsitories.swift; sourceTree = "<group>"; };
 		EF3C6D7729D17690008A5B23 /* MainRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRepositories.swift; sourceTree = "<group>"; };
 		EF3C6D7B29D17690008A5B23 /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		EF3C6D7F29D17690008A5B23 /* ChatDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDefaultCell.swift; sourceTree = "<group>"; };
+		EF3C6D7F29D17690008A5B23 /* ChatUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUserCell.swift; sourceTree = "<group>"; };
 		EF3C6D8129D17690008A5B23 /* ChatInputBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputBarView.swift; sourceTree = "<group>"; };
 		EF3C6D8229D17690008A5B23 /* ChatBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBodyView.swift; sourceTree = "<group>"; };
 		EF3C6D8429D17690008A5B23 /* ChatHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
@@ -118,6 +125,11 @@
 		EF3C6D9429D17690008A5B23 /* MainBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBodyView.swift; sourceTree = "<group>"; };
 		EF3C6D9529D17690008A5B23 /* MainLayoutModel + Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainLayoutModel + Gesture.swift"; sourceTree = "<group>"; };
 		EF3C6D9729D17690008A5B23 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EF5AA1DE29D2ABE50039B7A9 /* ChatLayoutModel + textView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatLayoutModel + textView.swift"; sourceTree = "<group>"; };
+		EF5AA1E029D2AC2E0039B7A9 /* ChatLayoutModel + Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatLayoutModel + Keyboard.swift"; sourceTree = "<group>"; };
+		EF6F4B9D29D179E200D77A9B /* ChatAssistantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssistantCell.swift; sourceTree = "<group>"; };
+		EF6F4B9F29D17CF000D77A9B /* ChatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileView.swift; sourceTree = "<group>"; };
+		EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController + tableview.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +140,9 @@
 				EF3C6D2C29D175D8008A5B23 /* PinLayout in Frameworks */,
 				EF3C6D2F29D175F8008A5B23 /* FlexLayout in Frameworks */,
 				EF3C6D3329D175F9008A5B23 /* FlexLayoutYogaKit in Frameworks */,
+				EF6F4BAA29D2659800D77A9B /* Then in Frameworks */,
 				EF3C6D3129D175F8008A5B23 /* FlexLayoutYoga in Frameworks */,
+				EF6F4BA529D264E200D77A9B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,8 +404,8 @@
 		EF3C6D7929D17690008A5B23 /* _Chat */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D7A29D17690008A5B23 /* ViewModel */,
 				EF3C6D7D29D17690008A5B23 /* Layout */,
+				EF3C6D7A29D17690008A5B23 /* ViewModel */,
 				EF3C6D8829D17690008A5B23 /* View */,
 			);
 			path = _Chat;
@@ -410,8 +424,10 @@
 			children = (
 				EF3C6D7E29D17690008A5B23 /* Cell */,
 				EF3C6D8029D17690008A5B23 /* CustomView */,
-				EF3C6D8629D17690008A5B23 /* ChatLayoutModel + Gesture.swift */,
 				EF3C6D8729D17690008A5B23 /* ChatLayoutModel.swift */,
+				EF5AA1DE29D2ABE50039B7A9 /* ChatLayoutModel + textView.swift */,
+				EF5AA1E029D2AC2E0039B7A9 /* ChatLayoutModel + Keyboard.swift */,
+				EF3C6D8629D17690008A5B23 /* ChatLayoutModel + Gesture.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -419,7 +435,8 @@
 		EF3C6D7E29D17690008A5B23 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D7F29D17690008A5B23 /* ChatDefaultCell.swift */,
+				EF3C6D7F29D17690008A5B23 /* ChatUserCell.swift */,
+				EF6F4B9D29D179E200D77A9B /* ChatAssistantCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -431,6 +448,7 @@
 				EF3C6D8229D17690008A5B23 /* ChatBodyView.swift */,
 				EF3C6D8429D17690008A5B23 /* ChatHeaderView.swift */,
 				EF3C6D8529D17690008A5B23 /* ChatMainLayout.swift */,
+				EF6F4B9F29D17CF000D77A9B /* ChatProfileView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -439,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3C6D8929D17690008A5B23 /* ChatViewController.swift */,
+				EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,8 +465,8 @@
 		EF3C6D8B29D17690008A5B23 /* _Main */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D8C29D17690008A5B23 /* ViewModel */,
 				EF3C6D8F29D17690008A5B23 /* Layout */,
+				EF3C6D8C29D17690008A5B23 /* ViewModel */,
 				EF3C6D9629D17690008A5B23 /* View */,
 			);
 			path = _Main;
@@ -465,9 +484,9 @@
 		EF3C6D8F29D17690008A5B23 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D9029D17690008A5B23 /* MainLayoutModel + Helper.swift */,
-				EF3C6D9129D17690008A5B23 /* MainLayoutModel.swift */,
 				EF3C6D9229D17690008A5B23 /* CustomView */,
+				EF3C6D9129D17690008A5B23 /* MainLayoutModel.swift */,
+				EF3C6D9029D17690008A5B23 /* MainLayoutModel + Helper.swift */,
 				EF3C6D9529D17690008A5B23 /* MainLayoutModel + Gesture.swift */,
 			);
 			path = Layout;
@@ -511,6 +530,8 @@
 				EF3C6D2E29D175F8008A5B23 /* FlexLayout */,
 				EF3C6D3029D175F8008A5B23 /* FlexLayoutYoga */,
 				EF3C6D3229D175F9008A5B23 /* FlexLayoutYogaKit */,
+				EF6F4BA429D264E200D77A9B /* SnapKit */,
+				EF6F4BA929D2659800D77A9B /* Then */,
 			);
 			productName = ChatBot;
 			productReference = EF3C6D1329D17597008A5B23 /* ChatBot.app */;
@@ -543,6 +564,8 @@
 			packageReferences = (
 				EF3C6D2A29D175D8008A5B23 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				EF3C6D2D29D175F8008A5B23 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+				EF6F4BA329D264E200D77A9B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EF6F4BA829D2659800D77A9B /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = EF3C6D1429D17597008A5B23 /* Products */;
 			projectDirPath = "";
@@ -572,7 +595,9 @@
 			files = (
 				EF3C6DA829D17690008A5B23 /* RequestBodyModel.swift in Sources */,
 				EF3C6D9C29D17690008A5B23 /* DefaultMainRepository.swift in Sources */,
+				EF5AA1DF29D2ABE50039B7A9 /* ChatLayoutModel + textView.swift in Sources */,
 				EF3C6DB329D17690008A5B23 /* ChatBodyView.swift in Sources */,
+				EF6F4BA029D17CF000D77A9B /* ChatProfileView.swift in Sources */,
 				EF3C6DAB29D17690008A5B23 /* FetchChatUseCase.swift in Sources */,
 				EF3C6D4F29D17686008A5B23 /* ChatDIContainer.swift in Sources */,
 				EF3C6DA529D17690008A5B23 /* ChatAPI.swift in Sources */,
@@ -589,13 +614,14 @@
 				EF3C6D4C29D17686008A5B23 /* MainCoordinator.swift in Sources */,
 				EF3C6DA229D17690008A5B23 /* MainURLRequest.swift in Sources */,
 				EF3C6DB729D17690008A5B23 /* ChatLayoutModel + Gesture.swift in Sources */,
-				EF3C6DB129D17690008A5B23 /* ChatDefaultCell.swift in Sources */,
+				EF3C6DB129D17690008A5B23 /* ChatUserCell.swift in Sources */,
 				EF3C6DA129D17690008A5B23 /* MainRequestDTO.swift in Sources */,
 				EF3C6DBE29D17690008A5B23 /* MainLayoutModel.swift in Sources */,
 				EF3C6D4B29D17686008A5B23 /* SceneDelegate.swift in Sources */,
 				EF3C6D4529D17686008A5B23 /* IntExtension.swift in Sources */,
 				EF3C6DC129D17690008A5B23 /* MainLayoutModel + Gesture.swift in Sources */,
 				EF3C6D9E29D17690008A5B23 /* ChatResponseDTO.swift in Sources */,
+				EF5AA1E129D2AC2E0039B7A9 /* ChatLayoutModel + Keyboard.swift in Sources */,
 				EF3C6DAD29D17690008A5B23 /* ChatRepsitories.swift in Sources */,
 				EF3C6D4729D17686008A5B23 /* UIExtension.swift in Sources */,
 				EF3C6DA929D17690008A5B23 /* FetchKeyModel.swift in Sources */,
@@ -606,6 +632,7 @@
 				EF3C6DB229D17690008A5B23 /* ChatInputBarView.swift in Sources */,
 				EF3C6D9B29D17690008A5B23 /* DefaultChatRepository.swift in Sources */,
 				EF3C6D4929D17686008A5B23 /* CodableExtension.swift in Sources */,
+				EF6F4B9E29D179E200D77A9B /* ChatAssistantCell.swift in Sources */,
 				EF3C6DC029D17690008A5B23 /* MainBodyView.swift in Sources */,
 				EF3C6DA329D17690008A5B23 /* ChatURLRequest.swift in Sources */,
 				EF3C6DA029D17690008A5B23 /* MainResponseDTO.swift in Sources */,
@@ -616,6 +643,7 @@
 				EF3C6DBF29D17690008A5B23 /* MainHeaderView.swift in Sources */,
 				EF3C6DB929D17690008A5B23 /* ChatViewController.swift in Sources */,
 				EF3C6DBD29D17690008A5B23 /* MainLayoutModel + Helper.swift in Sources */,
+				EF6F4BA229D18C6A00D77A9B /* ChatViewController + tableview.swift in Sources */,
 				EF3C6DAF29D17690008A5B23 /* ChatViewModel.swift in Sources */,
 				EF3C6D4D29D17686008A5B23 /* ChatCoordinator.swift in Sources */,
 				EF3C6DB829D17690008A5B23 /* ChatLayoutModel.swift in Sources */,
@@ -848,6 +876,22 @@
 				kind = branch;
 			};
 		};
+		EF6F4BA329D264E200D77A9B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		EF6F4BA829D2659800D77A9B /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -870,6 +914,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF3C6D2D29D175F8008A5B23 /* XCRemoteSwiftPackageReference "FlexLayout" */;
 			productName = FlexLayoutYogaKit;
+		};
+		EF6F4BA429D264E200D77A9B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6F4BA329D264E200D77A9B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EF6F4BA929D2659800D77A9B /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6F4BA829D2659800D77A9B /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
