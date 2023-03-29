@@ -14,7 +14,15 @@ extension ChatLayoutModel {
     }
     
     @objc func didTapSendMessage(_ sender: UIGestureRecognizer) {
-        self.delegate?.didTapSendMessage()
+        
+        if let text = self.layout.inputBarView.textView.text {
+            
+            self.delegate?.didTapSendMessage(text: text)
+            
+        } else {
+            log.e("error")
+        }
+        
     }
     
     @objc func didTapLayout(_ sender: UIGestureRecognizer) {

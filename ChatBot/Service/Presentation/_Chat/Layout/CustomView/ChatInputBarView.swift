@@ -32,7 +32,7 @@ class ChatInputBarView: UIView {
         textView.textContainerInset = .zero
         textView.backgroundColor = .white
         textView.isScrollEnabled = false
-        textView.text = "플레이스 홀더다"
+        textView.text = "Enter Messages"
         
         return textView
     }()
@@ -106,6 +106,21 @@ class ChatInputBarView: UIView {
         mainView.pin.all()
         
         mainView.flex.layout()
+    }
+    
+    func clearInputText() {
+        
+        self.textView.text = ""
+    }
+    
+    func isFocus() {
+        
+        textView.textColor = .gray32
+    }
+    
+    func isEnabledSendImage(_ state: Bool) {
+        
+        self.sendImageView.image = state == true ? .btnSend : .btnSendDisabled
     }
     
     deinit {

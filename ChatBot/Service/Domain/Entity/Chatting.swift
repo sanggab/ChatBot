@@ -29,7 +29,7 @@ struct Chatting: Identifiable, Codable, Hashable {
         case choices
     }
     
-    internal init(id: Chatting.ID, object: String, created: Int, usage: Usage, choices: [Choices]) {
+    internal init(id: Chatting.ID, object: String? = nil, created: Int? = nil, usage: Usage? = nil, choices: [Choices]? = nil) {
         self.id = id
         self.object = object
         self.created = created
@@ -42,10 +42,10 @@ struct Chatting: Identifiable, Codable, Hashable {
         let container: KeyedDecodingContainer<Chatting.CodingKeys> = try decoder.container(keyedBy: Chatting.CodingKeys.self)
         
         self.id = try container.decode(Chatting.ID.self, forKey: Chatting.CodingKeys.id)
-        self.object = try container.decode(String.self, forKey: Chatting.CodingKeys.object)
-        self.created = try container.decode(Int.self, forKey: Chatting.CodingKeys.created)
-        self.usage = try container.decode(Usage.self, forKey: Chatting.CodingKeys.usage)
-        self.choices = try container.decode([Choices].self, forKey: Chatting.CodingKeys.choices)
+        self.object = try? container.decode(String.self, forKey: Chatting.CodingKeys.object)
+        self.created = try? container.decode(Int.self, forKey: Chatting.CodingKeys.created)
+        self.usage = try? container.decode(Usage.self, forKey: Chatting.CodingKeys.usage)
+        self.choices = try? container.decode([Choices].self, forKey: Chatting.CodingKeys.choices)
         
     }
     

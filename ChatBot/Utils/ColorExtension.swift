@@ -21,6 +21,10 @@ extension UIColor {
         UIColor(redF: 144, greenF: 144, blueF: 144, alpha: 1)
     }
     
+    static var gray50: UIColor {
+        UIColor(redF: 80, greenF: 80, blueF: 80, alpha: 1)
+    }
+    
     static var graye1: UIColor {
         UIColor(redF: 225, greenF: 225, blueF: 225, alpha: 1)
     }

@@ -12,7 +12,7 @@ import FlexLayout
 protocol ChatLayoutModelProtocol: AnyObject {
     
     func didTapBackView()
-    func didTapSendMessage()
+    func didTapSendMessage(text: String)
 }
 
 class ChatLayoutModel: NSObject {

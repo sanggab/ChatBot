@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 struct ChatActions {
     
@@ -22,7 +23,9 @@ protocol ChatViewModelOutput {
     
 }
 
-protocol ChatViewModel: ChatViewModelInput, ChatViewModelOutput {}
+protocol ChatViewModel: ChatViewModelInput, ChatViewModelOutput {
+    
+}
 
 class DefaultChatViewModel: ChatViewModel {
     
@@ -31,6 +34,13 @@ class DefaultChatViewModel: ChatViewModel {
     var actions: ChatActions
     var chatUseCase: FetchChatUseCase
     
+    var chatListByDate: [String : [Chatting]] = [:]
+    var chatDate: [String] = []
+    
+    var dummy: [Chatting] = []
+    
+    var _testOutput: Observable<String> = .init()
+
     init(actions: ChatActions, chatUseCase: FetchChatUseCase) {
         self.actions     = actions
         self.chatUseCase = chatUseCase
@@ -38,6 +48,21 @@ class DefaultChatViewModel: ChatViewModel {
     
     deinit {
         log.i("DefaultChatViewModel deinit")
+    }
+}
+
+extension DefaultChatViewModel {
+    
+    func sortedToDummy() {
+        
+        do {
+            
+            
+            
+        } catch {
+            log.e(error)
+            log.e(error.localizedDescription)
+        }
     }
 }
 
@@ -53,21 +78,27 @@ extension DefaultChatViewModel {
     
     func sendMessage(text: String) {
         log.i(#function)
-        
+                
         let requestModel = getRequestBodyModel(message: .init(role: .user, content: text))
-        
+
         self.chatUseCase.sendMessage(reqModel: requestModel, completion: { [weak self] (result) in
-            
+
             guard let `self` = self else { return }
-            
+
             switch result {
             case .success(let response):
                 log.i(response)
             case .failure(let error):
                 log.e(error)
             }
-            
+
         })
+    }
+    
+    func setMyRequest(text: String) {
+        let chatting: Chatting = self.getChattingModel(text: text)
+        
+        self.dummy.append(chatting)
     }
 }
 
@@ -76,6 +107,10 @@ extension DefaultChatViewModel {
     func getRequestBodyModel(message: Message) -> RequestBodyModel {
         
         return RequestBodyModel(model: DefaultChatViewModel.model, messages: [message])
+    }
+    
+    func getChattingModel(text: String) -> Chatting {
+        return .init(id: UUID().uuidString, object: nil, created: nil, usage: nil, choices: [Choices(message: .init(role: .user, content: text), finish_reason: "", index: 0)])
     }
 }
 

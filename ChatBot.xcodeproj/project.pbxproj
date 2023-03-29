@@ -69,6 +69,7 @@
 		EF6F4BA229D18C6A00D77A9B /* ChatViewController + tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */; };
 		EF6F4BA529D264E200D77A9B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF6F4BA429D264E200D77A9B /* SnapKit */; };
 		EF6F4BAA29D2659800D77A9B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EF6F4BA929D2659800D77A9B /* Then */; };
+		EFC40D3F29D2DE86000453B6 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D3E29D2DE86000453B6 /* Observer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		EF6F4B9D29D179E200D77A9B /* ChatAssistantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssistantCell.swift; sourceTree = "<group>"; };
 		EF6F4B9F29D17CF000D77A9B /* ChatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileView.swift; sourceTree = "<group>"; };
 		EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController + tableview.swift"; sourceTree = "<group>"; };
+		EFC40D3E29D2DE86000453B6 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 				EF3C6D5129D17690008A5B23 /* Log.swift */,
 				EF3C6D5229D17690008A5B23 /* Exception.swift */,
 				EF3C6D5329D17690008A5B23 /* AlertModel.swift */,
+				EFC40D3E29D2DE86000453B6 /* Observer.swift */,
 			);
 			path = CommonComponents;
 			sourceTree = "<group>";
@@ -268,8 +271,8 @@
 		EF3C6D5629D17690008A5B23 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D5729D17690008A5B23 /* DefaultChatRepository.swift */,
 				EF3C6D5829D17690008A5B23 /* DefaultMainRepository.swift */,
+				EF3C6D5729D17690008A5B23 /* DefaultChatRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -297,8 +300,8 @@
 		EF3C6D5C29D17690008A5B23 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D5D29D17690008A5B23 /* ChatResponseDTO.swift */,
 				EF3C6D5E29D17690008A5B23 /* ChatRequestDTO.swift */,
+				EF3C6D5D29D17690008A5B23 /* ChatResponseDTO.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -306,8 +309,8 @@
 		EF3C6D5F29D17690008A5B23 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D6029D17690008A5B23 /* MainResponseDTO.swift */,
 				EF3C6D6129D17690008A5B23 /* MainRequestDTO.swift */,
+				EF3C6D6029D17690008A5B23 /* MainResponseDTO.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				EF3C6D4929D17686008A5B23 /* CodableExtension.swift in Sources */,
 				EF6F4B9E29D179E200D77A9B /* ChatAssistantCell.swift in Sources */,
 				EF3C6DC029D17690008A5B23 /* MainBodyView.swift in Sources */,
+				EFC40D3F29D2DE86000453B6 /* Observer.swift in Sources */,
 				EF3C6DA329D17690008A5B23 /* ChatURLRequest.swift in Sources */,
 				EF3C6DA029D17690008A5B23 /* MainResponseDTO.swift in Sources */,
 				EF3C6DA429D17690008A5B23 /* MainAPI.swift in Sources */,

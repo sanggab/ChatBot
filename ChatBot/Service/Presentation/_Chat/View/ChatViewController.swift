@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Combine
 
 class ChatViewController: UIViewController {
     
@@ -109,7 +109,7 @@ extension ChatViewController: ChatLayoutModelProtocol {
         self.viewModel.closeChatBot()
     }
     
-    func didTapSendMessage() {
-        self.viewModel.sendMessage(text: "반가워요!!")
+    func didTapSendMessage(text: String) {
+        self.viewModel.sendMessage(text: text)
     }
 }
