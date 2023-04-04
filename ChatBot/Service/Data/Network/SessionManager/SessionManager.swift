@@ -28,7 +28,7 @@ public final class SessionManager{
                 completion(.success(data))
                 
             } catch {
-                log.i(error.localizedDescription)
+                log.e(error.localizedDescription)
                 completion(.failure(error))
             }
             
@@ -47,7 +47,7 @@ public final class SessionManager{
                 completion(.success(data))
                 
             } catch {
-                log.i(error.localizedDescription)
+                log.e(error.localizedDescription)
                 completion(.failure(error))
             }
             

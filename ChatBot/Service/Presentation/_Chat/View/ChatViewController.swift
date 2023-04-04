@@ -28,8 +28,14 @@ class ChatViewController: UIViewController {
         self.view = layoutModel.layout
         
         layoutModel.loadView()
+        
         setDataSource()
+        
+        viewModel.loadView()
+        
         setDelegate()
+        
+        bind()
     }
     
     override func viewDidLoad() {
@@ -82,6 +88,7 @@ class ChatViewController: UIViewController {
         layoutModel.layout.bodyView.tableView.dataSource = layoutModel.layout.bodyView.dataSource
     }
     
+    @MainActor
     func reloadData() {
         
         var snapShot = NSDiffableDataSourceSnapshot<String, Chatting>()
@@ -96,6 +103,19 @@ class ChatViewController: UIViewController {
         snapShot.appendItems(model)
         
         layoutModel.layout.bodyView.dataSource.apply(snapShot, animatingDifferences: false)
+    }
+    
+    func bind() {
+        essesntailBind(to: viewModel)
+    }
+    
+    func essesntailBind(to viewModel: ChatViewModel) {
+        
+        self.viewModel._didListLoad.subscribe(onNext: { [weak self] (state) in
+            guard let `self` = self else { return }
+            
+            self.reloadData()
+        })
     }
     
     deinit {

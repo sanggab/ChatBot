@@ -13,6 +13,10 @@ struct ChatActions {
     var didCloseTap: (() -> Void)?
 }
 
+protocol ChatViewModelInit {
+    func loadView()
+}
+
 protocol ChatViewModelInput {
     
     func closeChatBot()
@@ -21,9 +25,10 @@ protocol ChatViewModelInput {
 
 protocol ChatViewModelOutput {
     
+    var _didListLoad: Publisher<Bool> { get set }
 }
 
-protocol ChatViewModel: ChatViewModelInput, ChatViewModelOutput {
+protocol ChatViewModel: ChatViewModelInit, ChatViewModelInput, ChatViewModelOutput {
     
 }
 
@@ -39,8 +44,8 @@ class DefaultChatViewModel: ChatViewModel {
     
     var dummy: [Chatting] = []
     
-    var _testOutput: Observable<String> = .init()
-
+    var _didListLoad: Publisher<Bool> = .init()
+    
     init(actions: ChatActions, chatUseCase: FetchChatUseCase) {
         self.actions     = actions
         self.chatUseCase = chatUseCase
@@ -57,7 +62,7 @@ extension DefaultChatViewModel {
         
         do {
             
-            
+            self._didListLoad.onNext(true)
             
         } catch {
             log.e(error)
@@ -79,20 +84,20 @@ extension DefaultChatViewModel {
     func sendMessage(text: String) {
         log.i(#function)
                 
-        let requestModel = getRequestBodyModel(message: .init(role: .user, content: text))
-
-        self.chatUseCase.sendMessage(reqModel: requestModel, completion: { [weak self] (result) in
-
-            guard let `self` = self else { return }
-
-            switch result {
-            case .success(let response):
-                log.i(response)
-            case .failure(let error):
-                log.e(error)
-            }
-
-        })
+//        let requestModel = getRequestBodyModel(message: .init(role: .user, content: text))
+//
+//        self.chatUseCase.sendMessage(reqModel: requestModel, completion: { [weak self] (result) in
+//
+//            guard let `self` = self else { return }
+//
+//            switch result {
+//            case .success(let response):
+//                log.i(response)
+//            case .failure(let error):
+//                log.e(error)
+//            }
+//
+//        })
     }
     
     func setMyRequest(text: String) {
@@ -117,4 +122,14 @@ extension DefaultChatViewModel {
 // MARK: - ChatViewModelOutput
 extension DefaultChatViewModel {
     
+}
+
+
+// MAKR: - Init
+extension DefaultChatViewModel {
+    
+    func loadView() {
+        log.i(#function)
+        self.sortedToDummy()
+    }
 }

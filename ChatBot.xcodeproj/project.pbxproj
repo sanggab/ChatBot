@@ -69,7 +69,13 @@
 		EF6F4BA229D18C6A00D77A9B /* ChatViewController + tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */; };
 		EF6F4BA529D264E200D77A9B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF6F4BA429D264E200D77A9B /* SnapKit */; };
 		EF6F4BAA29D2659800D77A9B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EF6F4BA929D2659800D77A9B /* Then */; };
+		EFAB0BD429D6650D0039EE35 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB0BD329D6650D0039EE35 /* ObservableType.swift */; };
+		EFAB0BD829D6670D0039EE35 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB0BD729D6670D0039EE35 /* Observable.swift */; };
 		EFC40D3F29D2DE86000453B6 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D3E29D2DE86000453B6 /* Observer.swift */; };
+		EFC40D4229D553DD000453B6 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4129D553DD000453B6 /* Publisher.swift */; };
+		EFC40D4429D553F4000453B6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4329D553F4000453B6 /* Event.swift */; };
+		EFC40D4629D55404000453B6 /* ObverserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4529D55404000453B6 /* ObverserType.swift */; };
+		EFC40D4829D5545B000453B6 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4729D5545B000453B6 /* Subject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +137,13 @@
 		EF6F4B9D29D179E200D77A9B /* ChatAssistantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssistantCell.swift; sourceTree = "<group>"; };
 		EF6F4B9F29D17CF000D77A9B /* ChatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileView.swift; sourceTree = "<group>"; };
 		EF6F4BA129D18C6A00D77A9B /* ChatViewController + tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController + tableview.swift"; sourceTree = "<group>"; };
+		EFAB0BD329D6650D0039EE35 /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		EFAB0BD729D6670D0039EE35 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		EFC40D3E29D2DE86000453B6 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		EFC40D4129D553DD000453B6 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		EFC40D4329D553F4000453B6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		EFC40D4529D55404000453B6 /* ObverserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObverserType.swift; sourceTree = "<group>"; };
+		EFC40D4729D5545B000453B6 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,10 +253,10 @@
 		EF3C6D5029D17690008A5B23 /* CommonComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EFC40D4029D553B1000453B6 /* ObserverPattern */,
 				EF3C6D5129D17690008A5B23 /* Log.swift */,
 				EF3C6D5229D17690008A5B23 /* Exception.swift */,
 				EF3C6D5329D17690008A5B23 /* AlertModel.swift */,
-				EFC40D3E29D2DE86000453B6 /* Observer.swift */,
 			);
 			path = CommonComponents;
 			sourceTree = "<group>";
@@ -512,6 +524,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EFC40D4029D553B1000453B6 /* ObserverPattern */ = {
+			isa = PBXGroup;
+			children = (
+				EFC40D4129D553DD000453B6 /* Publisher.swift */,
+				EFC40D4729D5545B000453B6 /* Subject.swift */,
+				EFC40D3E29D2DE86000453B6 /* Observer.swift */,
+				EFC40D4329D553F4000453B6 /* Event.swift */,
+				EFC40D4529D55404000453B6 /* ObverserType.swift */,
+				EFAB0BD329D6650D0039EE35 /* ObservableType.swift */,
+				EFAB0BD729D6670D0039EE35 /* Observable.swift */,
+			);
+			path = ObserverPattern;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -602,6 +628,7 @@
 				EF3C6DB329D17690008A5B23 /* ChatBodyView.swift in Sources */,
 				EF6F4BA029D17CF000D77A9B /* ChatProfileView.swift in Sources */,
 				EF3C6DAB29D17690008A5B23 /* FetchChatUseCase.swift in Sources */,
+				EFAB0BD429D6650D0039EE35 /* ObservableType.swift in Sources */,
 				EF3C6D4F29D17686008A5B23 /* ChatDIContainer.swift in Sources */,
 				EF3C6DA529D17690008A5B23 /* ChatAPI.swift in Sources */,
 				EF3C6DA629D17690008A5B23 /* SessionManager.swift in Sources */,
@@ -617,9 +644,13 @@
 				EF3C6D4C29D17686008A5B23 /* MainCoordinator.swift in Sources */,
 				EF3C6DA229D17690008A5B23 /* MainURLRequest.swift in Sources */,
 				EF3C6DB729D17690008A5B23 /* ChatLayoutModel + Gesture.swift in Sources */,
+				EFC40D4629D55404000453B6 /* ObverserType.swift in Sources */,
 				EF3C6DB129D17690008A5B23 /* ChatUserCell.swift in Sources */,
 				EF3C6DA129D17690008A5B23 /* MainRequestDTO.swift in Sources */,
 				EF3C6DBE29D17690008A5B23 /* MainLayoutModel.swift in Sources */,
+				EFC40D4229D553DD000453B6 /* Publisher.swift in Sources */,
+				EFC40D4429D553F4000453B6 /* Event.swift in Sources */,
+				EFC40D4829D5545B000453B6 /* Subject.swift in Sources */,
 				EF3C6D4B29D17686008A5B23 /* SceneDelegate.swift in Sources */,
 				EF3C6D4529D17686008A5B23 /* IntExtension.swift in Sources */,
 				EF3C6DC129D17690008A5B23 /* MainLayoutModel + Gesture.swift in Sources */,
@@ -648,6 +679,7 @@
 				EF3C6DB929D17690008A5B23 /* ChatViewController.swift in Sources */,
 				EF3C6DBD29D17690008A5B23 /* MainLayoutModel + Helper.swift in Sources */,
 				EF6F4BA229D18C6A00D77A9B /* ChatViewController + tableview.swift in Sources */,
+				EFAB0BD829D6670D0039EE35 /* Observable.swift in Sources */,
 				EF3C6DAF29D17690008A5B23 /* ChatViewModel.swift in Sources */,
 				EF3C6D4D29D17686008A5B23 /* ChatCoordinator.swift in Sources */,
 				EF3C6DB829D17690008A5B23 /* ChatLayoutModel.swift in Sources */,
