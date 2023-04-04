@@ -9,10 +9,10 @@ import Foundation
 
 enum ChatURLRequest {
     
-    static func sendMessage(dto: ChatRequestDTO) -> URLRequest {
+    static func sendMessage(dto: ChatRequestDTO) -> Endpoint<ChatResponseDTO> {
         
         let api = ChatAPI.sendMessage(dto.param)
         
-        return api.getURLRequest()
+        return Endpoint(urlRequest: api.getURLRequest())
     }
 }

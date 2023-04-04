@@ -54,7 +54,6 @@ class ChatUserCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
     
     func setLayout() {
@@ -94,7 +93,15 @@ class ChatUserCell: UITableViewCell {
         }
     }
     
+    func configUI(chatEntity: ChatEntity) {
+        self.bodyLabel.text = chatEntity.message.content
+        self.timeLabel.text = chatEntity.date?.toString().makeLocalTimeDate()
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        self.bodyLabel.text = nil
+        self.timeLabel.text = nil
     }
 }

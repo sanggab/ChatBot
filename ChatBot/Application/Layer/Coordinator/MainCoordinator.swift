@@ -16,7 +16,6 @@ protocol MainCoordinatorDependencies {
 
 class MainCoordinator {
     
-    
     weak var navigation: UINavigationController?
     private let dependencies: MainCoordinatorDependencies
     

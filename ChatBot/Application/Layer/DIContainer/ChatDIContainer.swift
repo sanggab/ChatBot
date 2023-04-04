@@ -18,7 +18,9 @@ class ChatDIContainer {
 extension ChatDIContainer: ChatCoordinatorDependencies {
     
     func makeChatViewController(actions: ChatActions) -> ChatViewController {
-        let viewModel = DefaultChatViewModel(actions: actions, chatUseCase: makeChatUseCase())
+        let viewModel = DefaultChatViewModel(actions: actions,
+                                             chatUseCase: makeChatUseCase(),
+                                             resourceUseCase: makeResourceUseCase())
         
         return ChatViewController.create(viewModel: viewModel)
     }
@@ -29,5 +31,13 @@ extension ChatDIContainer: ChatCoordinatorDependencies {
     
     func makeChatRepository() -> ChatRepository {
         return DefaultChatRepository()
+    }
+    
+    func makeResourceUseCase() -> FetchResourceUseCase {
+        return DefaultResourceUseCase(repository: makeResourceRepository())
+    }
+    
+    func makeResourceRepository() -> ResourceRepository {
+        return DefaultResourceRepository()
     }
 }

@@ -26,10 +26,3 @@ struct FetchKeyModel: Decodable, Equatable {
         
     }
 }
-
-//struct RequestBodyModel: Codable {
-//    
-//    let model: String
-//    
-//    let messages: [Message]
-//}

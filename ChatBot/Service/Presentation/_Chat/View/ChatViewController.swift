@@ -62,23 +62,27 @@ class ChatViewController: UIViewController {
     
     func setDataSource() {
         
-        layoutModel.layout.bodyView.dataSource = UITableViewDiffableDataSource<String, Chatting>(tableView: layoutModel.layout.bodyView.tableView, cellProvider: { [weak self] (tableView, indexPath, chatting) in
+        layoutModel.layout.bodyView.dataSource = UITableViewDiffableDataSource<String, ChatEntity>(tableView: layoutModel.layout.bodyView.tableView, cellProvider: { [weak self] (tableView, indexPath, chatting) in
             
             guard let `self` = self else { return UITableViewCell() }
             
-            switch chatting.choices?.first?.message.role {
+            switch chatting.message.role {
             case .user:
-                
+
                 let cell = tableView.dequeueReusableCell(withIdentifier: ChatUserCell.identifier, for: indexPath) as? ChatUserCell
                 
+                cell?.configUI(chatEntity: chatting)
+
                 return cell
-                
+
             case .assistant:
-                
+
                 let cell = tableView.dequeueReusableCell(withIdentifier: ChatAssistantCell.identifier, for: indexPath) as? ChatAssistantCell
                 
+                cell?.configUI(chatEntity: chatting)
+
                 return cell
-                
+
             default:
                 return UITableViewCell()
             }
@@ -91,16 +95,17 @@ class ChatViewController: UIViewController {
     @MainActor
     func reloadData() {
         
-        var snapShot = NSDiffableDataSourceSnapshot<String, Chatting>()
+        var snapShot = NSDiffableDataSourceSnapshot<String, ChatEntity>()
         
-        snapShot.appendSections(["11"])
+        let section = self.viewModel.getChatDate()
         
-        let model: [Chatting] = [
-            .init(id: "hohoho", object: "dododo", created: 1231321, usage: .init(prompt_tokens: 0, completion_tokens: 0, total_tokens: 0), choices: [.init(message: .init(role: .assistant, content: "hhhh"), finish_reason: "4444", index: 0)]),
-            .init(id: "hohoh22o", object: "dododo", created: 1231321, usage: .init(prompt_tokens: 0, completion_tokens: 0, total_tokens: 0), choices: [.init(message: .init(role: .user, content: "hhhh"), finish_reason: "4444", index: 0)])
-        ]
+        let chatList = self.viewModel.getChatListByDate()
         
-        snapShot.appendItems(model)
+        snapShot.appendSections(section)
+        
+        section.forEach {
+            snapShot.appendItems(chatList[$0] ?? [], toSection: $0)
+        }
         
         layoutModel.layout.bodyView.dataSource.apply(snapShot, animatingDifferences: false)
     }
@@ -113,7 +118,7 @@ class ChatViewController: UIViewController {
         
         self.viewModel._didListLoad.subscribe(onNext: { [weak self] (state) in
             guard let `self` = self else { return }
-            
+            log.i("didListLoad")
             self.reloadData()
         })
     }

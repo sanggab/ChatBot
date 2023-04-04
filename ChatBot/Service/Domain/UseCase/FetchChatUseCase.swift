@@ -10,7 +10,7 @@ import Foundation
 
 protocol UpdateChatUseCase {
     
-    func sendMessage(reqModel: RequestBodyModel, completion: @escaping ((Result<Chatting, Error>) -> Void))
+    func sendMessage(reqModel: RequestBodyModel, completion: @escaping ((Result<ChatEntity, Error>) -> Void))
 }
 
 protocol SearchChatUseCase {
@@ -32,7 +32,7 @@ class DefaultChatUseCase: FetchChatUseCase {
 // MARK: - Update
 extension DefaultChatUseCase {
     
-    func sendMessage(reqModel: RequestBodyModel, completion: @escaping ((Result<Chatting, Error>) -> Void)) {
+    func sendMessage(reqModel: RequestBodyModel, completion: @escaping ((Result<ChatEntity, Error>) -> Void)) {
         fetchChatRepository.sendMessage(reqModel: reqModel, completion: completion)
     }
 }

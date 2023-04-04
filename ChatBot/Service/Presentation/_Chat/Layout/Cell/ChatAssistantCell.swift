@@ -68,10 +68,6 @@ class ChatAssistantCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        log.i(#function)
-        
-        
-//        setConstraints2()
     }
     
     func setLayout() {
@@ -126,10 +122,16 @@ class ChatAssistantCell: UITableViewCell {
         
     }
     
+    func configUI(chatEntity: ChatEntity) {
+        self.bodyLabel.text = chatEntity.message.content
+        self.timeLabel.text = chatEntity.date?.toString().makeLocalTimeDate()
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        log.i(#function)
         
+        self.bodyLabel.text = nil
+        self.timeLabel.text = nil
     }
 
 }

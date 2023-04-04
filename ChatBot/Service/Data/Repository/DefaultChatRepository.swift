@@ -9,13 +9,28 @@ import Foundation
 
 final class DefaultChatRepository: ChatRepository {
     
-    func sendMessage(reqModel: RequestBodyModel, completion: @escaping ((Result<Chatting, Error>) -> Void)) {
+    func sendMessage(reqModel: RequestBodyModel, completion: @escaping ((Result<ChatEntity, Error>) -> Void)) {
         
         let requestDTO = ChatRequestDTO(param: reqModel.toDictionary ?? [:])
 
         let urlRequest = ChatURLRequest.sendMessage(dto: requestDTO)
-
-        SessionManager.responseDecodable(request: urlRequest, type: Chatting.self, completion: completion)
+        
+        SessionManager.responseData(request: urlRequest) { result in
+            
+            do {
+                
+                switch result {
+                case .success(let response):
+                    completion(.success(try response.toDomain()))
+                case .failure(let error):
+                    throw error
+                }
+                
+            } catch {
+                completion(.failure(error))
+            }
+            
+        }
 
     }
 }

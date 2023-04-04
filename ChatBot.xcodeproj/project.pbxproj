@@ -38,12 +38,12 @@
 		EF3C6DA429D17690008A5B23 /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6629D17690008A5B23 /* MainAPI.swift */; };
 		EF3C6DA529D17690008A5B23 /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6729D17690008A5B23 /* ChatAPI.swift */; };
 		EF3C6DA629D17690008A5B23 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6929D17690008A5B23 /* SessionManager.swift */; };
-		EF3C6DA729D17690008A5B23 /* Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6C29D17690008A5B23 /* Chatting.swift */; };
+		EF3C6DA729D17690008A5B23 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6C29D17690008A5B23 /* GPTModel.swift */; };
 		EF3C6DA829D17690008A5B23 /* RequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6E29D17690008A5B23 /* RequestBodyModel.swift */; };
 		EF3C6DA929D17690008A5B23 /* FetchKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D6F29D17690008A5B23 /* FetchKeyModel.swift */; };
 		EF3C6DAB29D17690008A5B23 /* FetchChatUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7229D17690008A5B23 /* FetchChatUseCase.swift */; };
 		EF3C6DAC29D17690008A5B23 /* FetchMainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7329D17690008A5B23 /* FetchMainUseCase.swift */; };
-		EF3C6DAD29D17690008A5B23 /* ChatRepsitories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7629D17690008A5B23 /* ChatRepsitories.swift */; };
+		EF3C6DAD29D17690008A5B23 /* ChatRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7629D17690008A5B23 /* ChatRepositories.swift */; };
 		EF3C6DAE29D17690008A5B23 /* MainRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7729D17690008A5B23 /* MainRepositories.swift */; };
 		EF3C6DAF29D17690008A5B23 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7B29D17690008A5B23 /* ChatViewModel.swift */; };
 		EF3C6DB129D17690008A5B23 /* ChatUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3C6D7F29D17690008A5B23 /* ChatUserCell.swift */; };
@@ -76,6 +76,18 @@
 		EFC40D4429D553F4000453B6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4329D553F4000453B6 /* Event.swift */; };
 		EFC40D4629D55404000453B6 /* ObverserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4529D55404000453B6 /* ObverserType.swift */; };
 		EFC40D4829D5545B000453B6 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC40D4729D5545B000453B6 /* Subject.swift */; };
+		EFC4B80229DBA85C002D5C43 /* ChatViewModel + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80129DBA85C002D5C43 /* ChatViewModel + Helper.swift */; };
+		EFC4B80429DBA996002D5C43 /* ChatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80329DBA996002D5C43 /* ChatEntity.swift */; };
+		EFC4B80629DBAC33002D5C43 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80529DBAC33002D5C43 /* ResponseDTO.swift */; };
+		EFC4B80829DBAE24002D5C43 /* RequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80729DBAE24002D5C43 /* RequestDTO.swift */; };
+		EFC4B80A29DBB4BB002D5C43 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80929DBB4BB002D5C43 /* StringExtension.swift */; };
+		EFC4B80D29DBDB1D002D5C43 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80C29DBDB1D002D5C43 /* UserDefaultsManager.swift */; };
+		EFC4B81029DBDC39002D5C43 /* ResourceRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B80F29DBDC39002D5C43 /* ResourceRequestDTO.swift */; };
+		EFC4B81229DBDC41002D5C43 /* ResourceResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B81129DBDC41002D5C43 /* ResourceResponseDTO.swift */; };
+		EFC4B81429DBDCC3002D5C43 /* FetchResourceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B81329DBDCC3002D5C43 /* FetchResourceUseCase.swift */; };
+		EFC4B81629DBDCD0002D5C43 /* ResourceRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B81529DBDCD0002D5C43 /* ResourceRepositories.swift */; };
+		EFC4B81829DBE1F1002D5C43 /* UserDefaultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B81729DBE1F1002D5C43 /* UserDefaultsModel.swift */; };
+		EFC4B81A29DBE8EA002D5C43 /* DefaultResourceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC4B81929DBE8EA002D5C43 /* DefaultResourceRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,12 +120,12 @@
 		EF3C6D6629D17690008A5B23 /* MainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
 		EF3C6D6729D17690008A5B23 /* ChatAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
 		EF3C6D6929D17690008A5B23 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		EF3C6D6C29D17690008A5B23 /* Chatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chatting.swift; sourceTree = "<group>"; };
+		EF3C6D6C29D17690008A5B23 /* GPTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
 		EF3C6D6E29D17690008A5B23 /* RequestBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBodyModel.swift; sourceTree = "<group>"; };
 		EF3C6D6F29D17690008A5B23 /* FetchKeyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchKeyModel.swift; sourceTree = "<group>"; };
 		EF3C6D7229D17690008A5B23 /* FetchChatUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchChatUseCase.swift; sourceTree = "<group>"; };
 		EF3C6D7329D17690008A5B23 /* FetchMainUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchMainUseCase.swift; sourceTree = "<group>"; };
-		EF3C6D7629D17690008A5B23 /* ChatRepsitories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRepsitories.swift; sourceTree = "<group>"; };
+		EF3C6D7629D17690008A5B23 /* ChatRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRepositories.swift; sourceTree = "<group>"; };
 		EF3C6D7729D17690008A5B23 /* MainRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRepositories.swift; sourceTree = "<group>"; };
 		EF3C6D7B29D17690008A5B23 /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		EF3C6D7F29D17690008A5B23 /* ChatUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUserCell.swift; sourceTree = "<group>"; };
@@ -144,6 +156,18 @@
 		EFC40D4329D553F4000453B6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EFC40D4529D55404000453B6 /* ObverserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObverserType.swift; sourceTree = "<group>"; };
 		EFC40D4729D5545B000453B6 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		EFC4B80129DBA85C002D5C43 /* ChatViewModel + Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewModel + Helper.swift"; sourceTree = "<group>"; };
+		EFC4B80329DBA996002D5C43 /* ChatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEntity.swift; sourceTree = "<group>"; };
+		EFC4B80529DBAC33002D5C43 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		EFC4B80729DBAE24002D5C43 /* RequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDTO.swift; sourceTree = "<group>"; };
+		EFC4B80929DBB4BB002D5C43 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		EFC4B80C29DBDB1D002D5C43 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		EFC4B80F29DBDC39002D5C43 /* ResourceRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequestDTO.swift; sourceTree = "<group>"; };
+		EFC4B81129DBDC41002D5C43 /* ResourceResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceResponseDTO.swift; sourceTree = "<group>"; };
+		EFC4B81329DBDCC3002D5C43 /* FetchResourceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResourceUseCase.swift; sourceTree = "<group>"; };
+		EFC4B81529DBDCD0002D5C43 /* ResourceRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRepositories.swift; sourceTree = "<group>"; };
+		EFC4B81729DBE1F1002D5C43 /* UserDefaultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsModel.swift; sourceTree = "<group>"; };
+		EFC4B81929DBE8EA002D5C43 /* DefaultResourceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResourceRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +225,7 @@
 				EF3C6D3729D17686008A5B23 /* UIExtension.swift */,
 				EF3C6D3829D17686008A5B23 /* ColorExtension.swift */,
 				EF3C6D3929D17686008A5B23 /* CodableExtension.swift */,
+				EFC4B80929DBB4BB002D5C43 /* StringExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -274,6 +299,7 @@
 		EF3C6D5529D17690008A5B23 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4B80B29DBDB10002D5C43 /* LocalStorage */,
 				EF3C6D5629D17690008A5B23 /* Repository */,
 				EF3C6D5A29D17690008A5B23 /* Network */,
 			);
@@ -285,6 +311,7 @@
 			children = (
 				EF3C6D5829D17690008A5B23 /* DefaultMainRepository.swift */,
 				EF3C6D5729D17690008A5B23 /* DefaultChatRepository.swift */,
+				EFC4B81929DBE8EA002D5C43 /* DefaultResourceRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -303,8 +330,11 @@
 		EF3C6D5B29D17690008A5B23 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				EFC4B80E29DBDC2E002D5C43 /* Resource */,
 				EF3C6D5C29D17690008A5B23 /* Chat */,
 				EF3C6D5F29D17690008A5B23 /* Main */,
+				EFC4B80529DBAC33002D5C43 /* ResponseDTO.swift */,
+				EFC4B80729DBAE24002D5C43 /* RequestDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -366,7 +396,7 @@
 		EF3C6D6B29D17690008A5B23 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D6C29D17690008A5B23 /* Chatting.swift */,
+				EFC4B80329DBA996002D5C43 /* ChatEntity.swift */,
 				EF3C6D6D29D17690008A5B23 /* Model */,
 			);
 			path = Entity;
@@ -375,6 +405,7 @@
 		EF3C6D6D29D17690008A5B23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF3C6D6C29D17690008A5B23 /* GPTModel.swift */,
 				EF3C6D6E29D17690008A5B23 /* RequestBodyModel.swift */,
 				EF3C6D6F29D17690008A5B23 /* FetchKeyModel.swift */,
 			);
@@ -384,8 +415,9 @@
 		EF3C6D7129D17690008A5B23 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D7229D17690008A5B23 /* FetchChatUseCase.swift */,
 				EF3C6D7329D17690008A5B23 /* FetchMainUseCase.swift */,
+				EF3C6D7229D17690008A5B23 /* FetchChatUseCase.swift */,
+				EFC4B81329DBDCC3002D5C43 /* FetchResourceUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -401,8 +433,9 @@
 		EF3C6D7529D17690008A5B23 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				EF3C6D7629D17690008A5B23 /* ChatRepsitories.swift */,
+				EF3C6D7629D17690008A5B23 /* ChatRepositories.swift */,
 				EF3C6D7729D17690008A5B23 /* MainRepositories.swift */,
+				EFC4B81529DBDCD0002D5C43 /* ResourceRepositories.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -430,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3C6D7B29D17690008A5B23 /* ChatViewModel.swift */,
+				EFC4B80129DBA85C002D5C43 /* ChatViewModel + Helper.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -538,6 +572,24 @@
 			path = ObserverPattern;
 			sourceTree = "<group>";
 		};
+		EFC4B80B29DBDB10002D5C43 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4B80C29DBDB1D002D5C43 /* UserDefaultsManager.swift */,
+				EFC4B81729DBE1F1002D5C43 /* UserDefaultsModel.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		EFC4B80E29DBDC2E002D5C43 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EFC4B80F29DBDC39002D5C43 /* ResourceRequestDTO.swift */,
+				EFC4B81129DBDC41002D5C43 /* ResourceResponseDTO.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -629,22 +681,28 @@
 				EF6F4BA029D17CF000D77A9B /* ChatProfileView.swift in Sources */,
 				EF3C6DAB29D17690008A5B23 /* FetchChatUseCase.swift in Sources */,
 				EFAB0BD429D6650D0039EE35 /* ObservableType.swift in Sources */,
+				EFC4B81229DBDC41002D5C43 /* ResourceResponseDTO.swift in Sources */,
 				EF3C6D4F29D17686008A5B23 /* ChatDIContainer.swift in Sources */,
 				EF3C6DA529D17690008A5B23 /* ChatAPI.swift in Sources */,
 				EF3C6DA629D17690008A5B23 /* SessionManager.swift in Sources */,
 				EF3C6D4A29D17686008A5B23 /* AppDelegate.swift in Sources */,
 				EF3C6DAC29D17690008A5B23 /* FetchMainUseCase.swift in Sources */,
-				EF3C6DA729D17690008A5B23 /* Chatting.swift in Sources */,
+				EF3C6DA729D17690008A5B23 /* GPTModel.swift in Sources */,
+				EFC4B81829DBE1F1002D5C43 /* UserDefaultsModel.swift in Sources */,
 				EF3C6DBC29D17690008A5B23 /* MainViewModel.swift in Sources */,
 				EF3C6D9F29D17690008A5B23 /* ChatRequestDTO.swift in Sources */,
 				EF3C6D9829D17690008A5B23 /* Log.swift in Sources */,
 				EF3C6D4E29D17686008A5B23 /* MainDIContainer.swift in Sources */,
 				EF3C6D9A29D17690008A5B23 /* AlertModel.swift in Sources */,
 				EF3C6DB529D17690008A5B23 /* ChatHeaderView.swift in Sources */,
+				EFC4B81029DBDC39002D5C43 /* ResourceRequestDTO.swift in Sources */,
 				EF3C6D4C29D17686008A5B23 /* MainCoordinator.swift in Sources */,
+				EFC4B80A29DBB4BB002D5C43 /* StringExtension.swift in Sources */,
 				EF3C6DA229D17690008A5B23 /* MainURLRequest.swift in Sources */,
 				EF3C6DB729D17690008A5B23 /* ChatLayoutModel + Gesture.swift in Sources */,
 				EFC40D4629D55404000453B6 /* ObverserType.swift in Sources */,
+				EFC4B81629DBDCD0002D5C43 /* ResourceRepositories.swift in Sources */,
+				EFC4B80429DBA996002D5C43 /* ChatEntity.swift in Sources */,
 				EF3C6DB129D17690008A5B23 /* ChatUserCell.swift in Sources */,
 				EF3C6DA129D17690008A5B23 /* MainRequestDTO.swift in Sources */,
 				EF3C6DBE29D17690008A5B23 /* MainLayoutModel.swift in Sources */,
@@ -655,13 +713,17 @@
 				EF3C6D4529D17686008A5B23 /* IntExtension.swift in Sources */,
 				EF3C6DC129D17690008A5B23 /* MainLayoutModel + Gesture.swift in Sources */,
 				EF3C6D9E29D17690008A5B23 /* ChatResponseDTO.swift in Sources */,
+				EFC4B80629DBAC33002D5C43 /* ResponseDTO.swift in Sources */,
 				EF5AA1E129D2AC2E0039B7A9 /* ChatLayoutModel + Keyboard.swift in Sources */,
-				EF3C6DAD29D17690008A5B23 /* ChatRepsitories.swift in Sources */,
+				EF3C6DAD29D17690008A5B23 /* ChatRepositories.swift in Sources */,
 				EF3C6D4729D17686008A5B23 /* UIExtension.swift in Sources */,
+				EFC4B80229DBA85C002D5C43 /* ChatViewModel + Helper.swift in Sources */,
+				EFC4B81429DBDCC3002D5C43 /* FetchResourceUseCase.swift in Sources */,
 				EF3C6DA929D17690008A5B23 /* FetchKeyModel.swift in Sources */,
 				EF3C6DBB29D17690008A5B23 /* MainViewModel + Response.swift in Sources */,
 				EF3C6D9929D17690008A5B23 /* Exception.swift in Sources */,
 				EF3C6D4629D17686008A5B23 /* ImageExtension.swift in Sources */,
+				EFC4B80829DBAE24002D5C43 /* RequestDTO.swift in Sources */,
 				EF3C6D4829D17686008A5B23 /* ColorExtension.swift in Sources */,
 				EF3C6DB229D17690008A5B23 /* ChatInputBarView.swift in Sources */,
 				EF3C6D9B29D17690008A5B23 /* DefaultChatRepository.swift in Sources */,
@@ -678,9 +740,11 @@
 				EF3C6DBF29D17690008A5B23 /* MainHeaderView.swift in Sources */,
 				EF3C6DB929D17690008A5B23 /* ChatViewController.swift in Sources */,
 				EF3C6DBD29D17690008A5B23 /* MainLayoutModel + Helper.swift in Sources */,
+				EFC4B80D29DBDB1D002D5C43 /* UserDefaultsManager.swift in Sources */,
 				EF6F4BA229D18C6A00D77A9B /* ChatViewController + tableview.swift in Sources */,
 				EFAB0BD829D6670D0039EE35 /* Observable.swift in Sources */,
 				EF3C6DAF29D17690008A5B23 /* ChatViewModel.swift in Sources */,
+				EFC4B81A29DBE8EA002D5C43 /* DefaultResourceRepository.swift in Sources */,
 				EF3C6D4D29D17686008A5B23 /* ChatCoordinator.swift in Sources */,
 				EF3C6DB829D17690008A5B23 /* ChatLayoutModel.swift in Sources */,
 			);

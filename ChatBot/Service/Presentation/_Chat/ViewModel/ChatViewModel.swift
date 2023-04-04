@@ -28,7 +28,16 @@ protocol ChatViewModelOutput {
     var _didListLoad: Publisher<Bool> { get set }
 }
 
-protocol ChatViewModel: ChatViewModelInit, ChatViewModelInput, ChatViewModelOutput {
+protocol ChatViewModelVCHelper {
+    typealias ChatListByDate = [String : [ChatEntity]]
+    typealias ChatDate = [String]
+    
+    
+    func getChatListByDate() -> ChatListByDate
+    func getChatDate() -> ChatDate
+}
+
+protocol ChatViewModel: ChatViewModelInit, ChatViewModelInput, ChatViewModelOutput, ChatViewModelVCHelper {
     
 }
 
@@ -38,17 +47,19 @@ class DefaultChatViewModel: ChatViewModel {
     
     var actions: ChatActions
     var chatUseCase: FetchChatUseCase
+    var resourceUseCase: FetchResourceUseCase
     
-    var chatListByDate: [String : [Chatting]] = [:]
-    var chatDate: [String] = []
+    var chatList: ChatListByDate = [:]
+    var sectionList: ChatDate = []
     
-    var dummy: [Chatting] = []
+    var dummy: [ChatEntity] = []
     
     var _didListLoad: Publisher<Bool> = .init()
     
-    init(actions: ChatActions, chatUseCase: FetchChatUseCase) {
-        self.actions     = actions
-        self.chatUseCase = chatUseCase
+    init(actions: ChatActions, chatUseCase: FetchChatUseCase, resourceUseCase: FetchResourceUseCase) {
+        self.actions            = actions
+        self.chatUseCase        = chatUseCase
+        self.resourceUseCase    = resourceUseCase
     }
     
     deinit {
@@ -62,10 +73,26 @@ extension DefaultChatViewModel {
         
         do {
             
+            let dic = try Dictionary(grouping: self.dummy, by: { (data) -> String in
+                
+                if let date = try data.date?.toString().makeLocalDate() {
+                    
+                    return date
+                } else {
+                    
+                    return "error"
+                }
+                
+            })
+            
+            self.chatList = dic
+            self.sectionList = dic.keys.sorted(by: <)
+            
+            log.i(chatList)
+            
             self._didListLoad.onNext(true)
             
         } catch {
-            log.e(error)
             log.e(error.localizedDescription)
         }
     }
@@ -83,27 +110,36 @@ extension DefaultChatViewModel {
     
     func sendMessage(text: String) {
         log.i(#function)
+        
+        self.setMyRequest(text: text)
                 
-//        let requestModel = getRequestBodyModel(message: .init(role: .user, content: text))
-//
-//        self.chatUseCase.sendMessage(reqModel: requestModel, completion: { [weak self] (result) in
-//
-//            guard let `self` = self else { return }
-//
-//            switch result {
-//            case .success(let response):
-//                log.i(response)
-//            case .failure(let error):
-//                log.e(error)
-//            }
-//
-//        })
+        let requestModel = getRequestBodyModel(message: .init(role: .user, content: text))
+
+        self.chatUseCase.sendMessage(reqModel: requestModel, completion: { [weak self] (result) in
+
+            guard let `self` = self else { return }
+
+            switch result {
+            case .success(let response):
+                
+                self.dummy.append(response)
+                self.sortedToDummy()
+                
+                self.resourceUseCase.saveChattingList(data: try? JSONEncoder().encode(self.dummy))
+                
+            case .failure(let error):
+                log.e(error)
+            }
+
+        })
     }
     
     func setMyRequest(text: String) {
-        let chatting: Chatting = self.getChattingModel(text: text)
+        let chatList: ChatEntity = .init(id: "1", date: Int(Date().timeIntervalSince1970), message: .init(role: .user, content: text))
         
-        self.dummy.append(chatting)
+        self.dummy.append(chatList)
+        
+        self.sortedToDummy()
     }
 }
 
@@ -114,7 +150,7 @@ extension DefaultChatViewModel {
         return RequestBodyModel(model: DefaultChatViewModel.model, messages: [message])
     }
     
-    func getChattingModel(text: String) -> Chatting {
+    func getChattingModel(text: String) -> GPTModel {
         return .init(id: UUID().uuidString, object: nil, created: nil, usage: nil, choices: [Choices(message: .init(role: .user, content: text), finish_reason: "", index: 0)])
     }
 }
@@ -130,6 +166,13 @@ extension DefaultChatViewModel {
     
     func loadView() {
         log.i(#function)
+        
+        let chatList = self.resourceUseCase.getChattingList()
+        
+        if !chatList.isEmpty {
+            self.dummy.append(contentsOf: chatList)
+        }
+        
         self.sortedToDummy()
     }
 }

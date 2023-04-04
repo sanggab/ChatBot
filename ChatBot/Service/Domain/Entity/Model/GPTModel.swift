@@ -1,5 +1,5 @@
 //
-//  Entity.swift
+//  GPTModel.swift
 //  ChatGptBot
 //
 //  Created by yeoboya-211221-05 on 2023/03/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Chatting: Identifiable, Codable, Hashable {
+struct GPTModel: Identifiable, Codable, Hashable {
 
     typealias ID = String
     
@@ -29,7 +29,7 @@ struct Chatting: Identifiable, Codable, Hashable {
         case choices
     }
     
-    internal init(id: Chatting.ID, object: String? = nil, created: Int? = nil, usage: Usage? = nil, choices: [Choices]? = nil) {
+    internal init(id: GPTModel.ID, object: String? = nil, created: Int? = nil, usage: Usage? = nil, choices: [Choices]? = nil) {
         self.id = id
         self.object = object
         self.created = created
@@ -39,13 +39,13 @@ struct Chatting: Identifiable, Codable, Hashable {
     
     
     init(from decoder: Decoder) throws {
-        let container: KeyedDecodingContainer<Chatting.CodingKeys> = try decoder.container(keyedBy: Chatting.CodingKeys.self)
+        let container: KeyedDecodingContainer<GPTModel.CodingKeys> = try decoder.container(keyedBy: GPTModel.CodingKeys.self)
         
-        self.id = try container.decode(Chatting.ID.self, forKey: Chatting.CodingKeys.id)
-        self.object = try? container.decode(String.self, forKey: Chatting.CodingKeys.object)
-        self.created = try? container.decode(Int.self, forKey: Chatting.CodingKeys.created)
-        self.usage = try? container.decode(Usage.self, forKey: Chatting.CodingKeys.usage)
-        self.choices = try? container.decode([Choices].self, forKey: Chatting.CodingKeys.choices)
+        self.id = try container.decode(GPTModel.ID.self, forKey: GPTModel.CodingKeys.id)
+        self.object = try? container.decode(String.self, forKey: GPTModel.CodingKeys.object)
+        self.created = try? container.decode(Int.self, forKey: GPTModel.CodingKeys.created)
+        self.usage = try? container.decode(Usage.self, forKey: GPTModel.CodingKeys.usage)
+        self.choices = try? container.decode([Choices].self, forKey: GPTModel.CodingKeys.choices)
         
     }
     

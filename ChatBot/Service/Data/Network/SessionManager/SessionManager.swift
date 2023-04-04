@@ -54,6 +54,29 @@ public final class SessionManager{
         }.resume()
     }
     
+    class func responseData<T: ResponseDTO, G: RequestDTO>(request: G, completion: @escaping ((Result<T, Error>) -> Void))  where G.Response == T {
+        
+        let urlSession = URLSession.shared
+        
+        urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
+            
+            do {
+                
+                guard error == nil else {
+                    throw error!
+                }
+                
+                let dto = try T.init(data: data)
+                
+                completion(.success(dto))
+                
+            } catch {
+                log.e(error.localizedDescription)
+                completion(.failure(error))
+            }
+            
+        }.resume()
+    }
 }
 
 public final class SerializeManager: ResponseSerializerProtocol {

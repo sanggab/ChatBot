@@ -31,7 +31,7 @@ class ChatBodyView: UIView {
         return tableView
     }()
     
-    var dataSource: UITableViewDiffableDataSource<String, Chatting>!
+    var dataSource: UITableViewDiffableDataSource<String, ChatEntity>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
