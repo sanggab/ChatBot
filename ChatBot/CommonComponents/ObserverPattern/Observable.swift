@@ -12,4 +12,5 @@ public class Observable<Element>: ObservableType {
     func deliver(_ observer: Observer<Element>) {
         log.i(observer)
     }
+    
 }

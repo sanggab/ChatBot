@@ -9,17 +9,14 @@ import Foundation
 
 protocol UpdateResourceUseCase {
     
-    @discardableResult
-    func saveChattingList(data: Data?) -> Bool
-    
-    @discardableResult
-    func saveRemainText(data: Data?) -> Bool
+    func saveChattingList(data: Data?) throws
+    func saveRemainText(data: Data?) throws
 }
 
 protocol SearchResourceUseCase {
     
-    func getChattingList() -> [ChatEntity]
-    func getReaminText() -> String
+    func getChattingList() throws -> [ChatEntity]
+    func getReaminText() throws -> String
 }
 
 protocol FetchResourceUseCase: UpdateResourceUseCase, SearchResourceUseCase {}
@@ -36,25 +33,23 @@ class DefaultResourceUseCase: FetchResourceUseCase {
 // MARK: - Update
 extension DefaultResourceUseCase {
     
-    @discardableResult
-    func saveChattingList(data: Data?) -> Bool {
-        return fetchResourceRepository.saveChattingList(data: data)
+    func saveChattingList(data: Data?) throws {
+        try fetchResourceRepository.saveChattingList(data: data)
     }
     
-    @discardableResult
-    func saveRemainText(data: Data?) -> Bool {
-        return fetchResourceRepository.saveRemainText(data: data)
+    func saveRemainText(data: Data?) throws {
+        try fetchResourceRepository.saveRemainText(data: data)
     }
 }
 
 // MARK: - Search
 extension DefaultResourceUseCase {
     
-    func getChattingList() -> [ChatEntity] {
-        return fetchResourceRepository.getChattingList()
+    func getChattingList() throws -> [ChatEntity] {
+        return try fetchResourceRepository.getChattingList()
     }
     
-    func getReaminText() -> String {
-        return fetchResourceRepository.getRemainText()
+    func getReaminText() throws -> String {
+        return try fetchResourceRepository.getRemainText()
     }
 }

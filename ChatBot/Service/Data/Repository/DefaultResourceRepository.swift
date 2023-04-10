@@ -9,33 +9,49 @@ import Foundation
 
 final class DefaultResourceRepository: ResourceRepository {
     
-    func getChattingList() -> [ChatEntity] {
+    func getChattingList() throws -> [ChatEntity] {
         
         let data = UserDefaultsManager.CHATTING_LIST
         
-        let test = try? JSONDecoder().decode([ChatEntity].self, from: data ?? Data())
+        let responseDTO = try ResourceResponseDTO(data: data)
         
-        return test ?? []
+        return try responseDTO.toChatDomain()
     }
     
-    func getRemainText() -> String {
+    func getRemainText() throws -> String {
         
-        return ""
+        let data = UserDefaultsManager.REMAIN_TEXT
+        
+        let responseDTO = try ResourceResponseDTO(data: data)
+        
+        return try responseDTO.toRemainText()
     }
     
-    func saveChattingList(data: Data?) -> Bool {
+    func saveChattingList(data: Data?) throws {
         
         let beforeCount = UserDefaultsManager.CHATTING_LIST?.count
         
+        let afterCount = data?.count
+        
+        guard beforeCount != afterCount else {
+            throw Exception.GuardBinding.match(data: "UserDefaultsManager.CHATTING_LIST")
+        }
+        
         UserDefaultsManager.CHATTING_LIST = data
         
-        let afterCount = UserDefaultsManager.CHATTING_LIST?.count
-        
-        return beforeCount != afterCount
     }
     
-    func saveRemainText(data: Data?) -> Bool {
+    func saveRemainText(data: Data?) throws {
         
-        return true
+        let beforeCount = UserDefaultsManager.REMAIN_TEXT?.count
+        
+        let afterCount = data?.count
+        
+        guard beforeCount != afterCount else {
+            throw Exception.GuardBinding.match(data: "UserDefaultsManager.REMAIN_TEXT")
+        }
+        
+        UserDefaultsManager.REMAIN_TEXT = data
+        
     }
 }

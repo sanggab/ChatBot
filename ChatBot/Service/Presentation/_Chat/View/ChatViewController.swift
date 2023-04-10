@@ -31,18 +31,17 @@ class ChatViewController: UIViewController {
         
         setDataSource()
         
-        viewModel.loadView()
+        bind()
         
         setDelegate()
         
-        bind()
+        viewModel.loadView()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         log.i(#function)
-        
-        reloadData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -53,6 +52,11 @@ class ChatViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         log.i(#function)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.saveRemainText()
     }
     
     func setDelegate() {
@@ -116,11 +120,26 @@ class ChatViewController: UIViewController {
     
     func essesntailBind(to viewModel: ChatViewModel) {
         
-        self.viewModel._didListLoad.subscribe(onNext: { [weak self] (state) in
+        viewModel._didListLoad.subscribe(onNext: { [weak self] (state) in
             guard let `self` = self else { return }
             log.i("didListLoad")
+            
             self.reloadData()
+            
+            self.scrollToBottom()
         })
+        
+        viewModel._didRemainText.subscribe(onNext: { [weak self] (text) in
+            guard let `self` = self else { return }
+            log.i("REMAIN_TEXT -> \(text)")
+            
+            self.layoutModel.setRemainText(text: text)
+            
+        })
+    }
+    
+    func scrollToBottom(_ isAnimated: Bool = true) {
+        
     }
     
     deinit {
@@ -136,5 +155,16 @@ extension ChatViewController: ChatLayoutModelProtocol {
     
     func didTapSendMessage(text: String) {
         self.viewModel.sendMessage(text: text)
+    }
+}
+
+extension ChatViewController {
+    
+    func saveRemainText() {
+        
+        if let text = self.layoutModel.getTextViewText() {
+            self.viewModel.saveRemainText(text: text)
+        }
+        
     }
 }

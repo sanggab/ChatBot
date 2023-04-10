@@ -21,11 +21,13 @@ protocol ChatViewModelInput {
     
     func closeChatBot()
     func sendMessage(text: String)
+    func saveRemainText(text: String)
 }
 
 protocol ChatViewModelOutput {
     
-    var _didListLoad: Publisher<Bool> { get set }
+    var _didListLoad: Publisher<Bool> { get }
+    var _didRemainText: Publisher<String> { get }
 }
 
 protocol ChatViewModelVCHelper {
@@ -56,6 +58,8 @@ class DefaultChatViewModel: ChatViewModel {
     
     var _didListLoad: Publisher<Bool> = .init()
     
+    var _didRemainText: Publisher<String> = .init()
+    
     init(actions: ChatActions, chatUseCase: FetchChatUseCase, resourceUseCase: FetchResourceUseCase) {
         self.actions            = actions
         self.chatUseCase        = chatUseCase
@@ -78,17 +82,17 @@ extension DefaultChatViewModel {
                 if let date = try data.date?.toString().makeLocalDate() {
                     
                     return date
+                    
                 } else {
                     
                     return "error"
+                    
                 }
                 
             })
             
             self.chatList = dic
             self.sectionList = dic.keys.sorted(by: <)
-            
-            log.i(chatList)
             
             self._didListLoad.onNext(true)
             
@@ -112,27 +116,28 @@ extension DefaultChatViewModel {
         log.i(#function)
         
         self.setMyRequest(text: text)
-                
+        
         let requestModel = getRequestBodyModel(message: .init(role: .user, content: text))
-
+        
         self.chatUseCase.sendMessage(reqModel: requestModel, completion: { [weak self] (result) in
-
+            
             guard let `self` = self else { return }
-
+            
             switch result {
             case .success(let response):
                 
                 self.dummy.append(response)
                 self.sortedToDummy()
                 
-                self.resourceUseCase.saveChattingList(data: try? JSONEncoder().encode(self.dummy))
+                self.saveChatList()
                 
             case .failure(let error):
                 log.e(error)
             }
-
+            
         })
     }
+    
     
     func setMyRequest(text: String) {
         let chatList: ChatEntity = .init(id: "1", date: Int(Date().timeIntervalSince1970), message: .init(role: .user, content: text))
@@ -141,6 +146,33 @@ extension DefaultChatViewModel {
         
         self.sortedToDummy()
     }
+    
+    func saveChatList() {
+        
+        do {
+            
+            let chatData = try JSONEncoder().encode(self.dummy)
+            
+            try self.resourceUseCase.saveChattingList(data: chatData)
+            
+        } catch {
+            log.e(error.localizedDescription)
+        }
+    }
+    
+    func saveRemainText(text: String) {
+        
+        do {
+            
+            let chatData = try JSONEncoder().encode(text)
+            
+            try self.resourceUseCase.saveRemainText(data: chatData)
+            
+        } catch {
+            log.e(error.localizedDescription)
+        }
+    }
+    
 }
 
 extension DefaultChatViewModel {
@@ -164,15 +196,27 @@ extension DefaultChatViewModel {
 // MAKR: - Init
 extension DefaultChatViewModel {
     
+    func getRemainText() throws -> String {
+        try self.resourceUseCase.getReaminText()
+    }
+    
     func loadView() {
         log.i(#function)
         
-        let chatList = self.resourceUseCase.getChattingList()
-        
-        if !chatList.isEmpty {
-            self.dummy.append(contentsOf: chatList)
+        do {
+            
+            try self._didRemainText.onNext(getRemainText())
+            
+            let chatList = try self.resourceUseCase.getChattingList()
+            
+            if !chatList.isEmpty {
+                self.dummy.append(contentsOf: chatList)
+            }
+            
+            self.sortedToDummy()
+            
+        } catch {
+            log.e(error.localizedDescription)
         }
-        
-        self.sortedToDummy()
     }
 }

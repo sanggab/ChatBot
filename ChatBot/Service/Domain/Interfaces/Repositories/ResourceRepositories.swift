@@ -9,11 +9,11 @@ import Foundation
 
 protocol ResourceRepository {
     
-    func getChattingList() -> [ChatEntity]
-    func getRemainText() -> String
+    func getChattingList() throws -> [ChatEntity]
+    func getRemainText() throws -> String
     
-    func saveChattingList(data: Data?) -> Bool
-    func saveRemainText(data: Data?) -> Bool
+    func saveChattingList(data: Data?) throws
+    func saveRemainText(data: Data?) throws
     
     
 }

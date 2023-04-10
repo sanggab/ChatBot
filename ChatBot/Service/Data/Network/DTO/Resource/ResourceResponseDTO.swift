@@ -23,3 +23,14 @@ struct ResourceResponseDTO: ResponseDTO {
     
     
 }
+
+extension ResourceResponseDTO {
+    
+    func toChatDomain() throws -> [ChatEntity] {
+        return try JSONDecoder().decode([ChatEntity].self, from: data)
+    }
+    
+    func toRemainText() throws -> String {
+        return try JSONDecoder().decode(String.self, from: data)
+    }
+}

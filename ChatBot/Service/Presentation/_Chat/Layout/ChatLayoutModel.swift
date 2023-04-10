@@ -54,6 +54,19 @@ class ChatLayoutModel: NSObject {
     func setDelegate() {
         layout.inputBarView.textView.delegate = self
     }
+    
+    @MainActor
+    func setRemainText(text: String) {
+        self.layout.inputBarView.textView.text = text
+    }
+    
+    func getTextViewText() -> String? {
+        if let text = self.layout.inputBarView.textView.text, text != "Enter Messages" {
+            return text
+        }
+        
+        return nil
+    }
 
     deinit {
         log.i("ChatLayoutModel deinit")
